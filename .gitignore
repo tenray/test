@@ -223,3 +223,4 @@ Test.Web/obj/project.assets.json
 Test.Web/obj/Test.Web.csproj.nuget.g.targets
 Test.Web/obj/Test.Web.csproj.nuget.g.props
 Test.Web/obj/Test.Web.csproj.nuget.cache
+.vs/

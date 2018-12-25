@@ -14,13 +14,15 @@ namespace Test.Data.Repositories
         StorageModel storage;
         string FilePath { get; set; }
 
-        public static object locker = new object();
-        string fileName = Path.Combine("JSON", "storage.json");
+        public static object locker = new object();        
 
         public JsonRepository()
         {
             //get file path            
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            Type currentType = this.GetType();
+            string projectName = currentType.Assembly.GetName().Name;
+            string fileName = Path.Combine(projectName, @"JSON\storage.json");
+            string basePath = Directory.GetParent(Directory.GetCurrentDirectory()).ToString();
             string JsonFilePath = Path.Combine(basePath, fileName);
             FilePath = JsonFilePath;
 
